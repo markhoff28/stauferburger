@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste{% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+    <h1>Liste</h1>
+    <br>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ liste.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ liste.name }}</td>
+            </tr>
+            <tr>
+                <th>Stadt</th>
+                <td>{{ liste.city }}</td>
+            </tr>
+            <tr>
+                <th>Telefonnummer</th>
+                <td>{{ liste.phone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_liste_index') }}">Zurück zur Liste</a>
+
+    <a href="{{ path('app_liste_edit', {'id': liste.id}) }}">Bearbeiten</a>
+
+    {{ include('liste/_delete_form.html.twig') }}
+    <br>
+</div>
+{% endblock %}

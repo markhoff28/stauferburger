@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Bearbeiten{% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+    <h2>Eintrag bearbeiten</h2>
+    <br>
+
+    {{ include('liste/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_liste_index') }}">Zurück zur Liste</a>
+
+    {{ include('liste/_delete_form.html.twig') }}
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block body %}
+
+{% for error in errors %}
+    <div class="alert alert-success">
+        <h3>{{ error.message }}</h3>
+    </div>
+{% endfor %}
+
+<br>
+<div class="container">
+
+<h2>Registrierung</h2>
+<br>
+{{ form(registrationForm) }}
+</div>
+{% endblock %}

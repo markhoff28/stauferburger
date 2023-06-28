@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sende eine Nachricht{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('nachricht') %}
+	<div class="alert alert-success">
+		<h3>
+			{{ message }}
+		</h3>
+	</div>
+{% endfor %}
+
+<section class="contact-section">
+	<div class="container-fluid">
+		<div class="row">
+			<div
+				class="col-lg-6 p-0">
+				<!-- Map -->
+				<div class="map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9914406082157!2d2.292292615920667!3d48.85837360866145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffelturm!5e0!3m2!1sde!2sbd!4v1593932844316!5m2!1sde!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				</div>
+			</div>
+			<div class="col-lg-6 p-0">
+				<div class="contact-warp">
+					<div class="section-title mb-0">
+						<h2>Kellner Kontakt</h2>
+					</div>
+					<p>Möchten Sie dem Kellner weitere Wünsche zu Ihrer Bestellungen mitteilen? Auf dieser Seite haben Sie mit unserem Kontaktformular die Möglichkeit mit unserem qualifizierten Servicepersonal in Kontakt zu treten. Egal ob etwas fehlt, oder es sich um extra Wünsche bei unseren Gerichten handelt. Auch Lob Anregungen und Kritik sind gern gesehen. Zögern Sie nicht uns zu kontaktieren.</p>
+					{{form(emailForm)}}
+					</div>
+				</div>
+			</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menükarte des Restaurants X{% endblock %}
+
+{% block body %}
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<h2><span>{{ meal0.name }}</span>!</h2>
+								<p>Probieren Sie jetzt {{ meal0.description }} für nur {{ meal0.price }}! Exklusiv als Gericht des Tages.</p>
+								<a href="{{ path('menu') }}" class="site-btn">Menukarte</a>
+								<a href="{{ path('ordering', {id: meal0.id}) }}" class="site-btn sb-c2">Bestellen</a>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hr-img">
+								<img src="{{ asset('bilder/' ~ meal0.image) }}" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<h2><span>{{ meal1.name }}</span>!</h2>
+								<p>Probieren Sie jetzt {{ meal1.description }} für nur {{ meal1.price }}! Exklusiv als Gericht des Tages.</p>
+								<a href="{{ path('menu') }}" class="site-btn">Menukarte</a>
+								<a href="{{ path('ordering', {id: meal1.id}) }}" class="site-btn sb-c2">Bestellen</a>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hr-img">
+								<img src="{{ asset('bilder/' ~ meal1.image) }}" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

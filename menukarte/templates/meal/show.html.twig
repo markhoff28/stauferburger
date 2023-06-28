@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gerichte anlegen{% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+<h1>{{ meal.name }}</h1>
+<img src="{{ asset('bilder/' ~ meal.image) }}">
+
+</div>
+
+{% endblock %}

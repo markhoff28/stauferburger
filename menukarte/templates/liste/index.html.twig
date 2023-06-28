@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste index{% endblock %}
+
+{% block body %}
+    <br>
+    <div class="container">
+        <h2>Liste index</h2>
+        <br>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Stadt</th>
+                    <th>Telefon</th>
+                    <th>Menü</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for liste in listes %}
+                <tr>
+                    <td>{{ liste.id }}</td>
+                    <td>{{ liste.name }}</td>
+                    <td>{{ liste.city }}</td>
+                    <td>{{ liste.phone }}</td>
+                    <td>
+                        <a href="{{ path('app_liste_show', {'id': liste.id}) }}">Anzeigen</a>
+                        <a href="{{ path('app_liste_edit', {'id': liste.id}) }}">Bearbeiten</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Keine Einträge gefunden</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_liste_new') }}">Neu Anlegen</a>
+    </div>
+{% endblock %}
